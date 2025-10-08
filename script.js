@@ -5,18 +5,19 @@ const numberButtons = document.querySelectorAll("#number-buttons button");
 const operatorButtons = document.querySelectorAll("#operator-buttons button");
 const allButtons = document.querySelectorAll("#buttons-layout div button")
 
-const getFirstOperand = () => {
+const getFirstValue = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
-            firstOperand += button.textContent;
+            firstValue.push(button.textContent)
+            console.log(firstValue)
         });
     });
 };
 
-const getSecondOperand = () => {
+const getSecondValue = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
-            secondOperand += button.textContent;
+            secondValue += button.textContent;
         });
     });
 };
@@ -29,19 +30,20 @@ const getOperator = () => {
     });
 };
 
-let firstOperand = "";
-let secondOperand = "";
+let firstValue = [];
+let secondValue = []; 
 let operator = "";
 let result;
 
 const updateScreen = () => {
     allButtons.forEach(button => {
         button.addEventListener("click", () => {
-            screenResult.textContent = `${firstOperand} ${operator} ${secondOperand}`;
+            const firstValueStr = firstValue.join("");
+            screenResult.textContent = `${firstValueStr} ${operator} ${secondValue}`;
         });
     });
 };
 
-getFirstOperand();
+getFirstValue();
 getOperator();
 updateScreen();
