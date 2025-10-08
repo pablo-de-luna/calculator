@@ -1,15 +1,24 @@
 "use strict"
 
-const numButtons = document.querySelectorAll("#number-buttons button");
+const screenResult = document.querySelector("#screen-result")
+const numberButtons = document.querySelectorAll("#number-buttons button");
+const operatorButtons = document.querySelectorAll("#operator-buttons button");
 
-let screenResult = document.querySelector("#screen-result")
-
-const getNumButtonOutput = () => {
-    numButtons.forEach(button => {
+const getNumButtonValue = () => {
+    numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         screenResult.textContent = button.textContent; 
-    })
-    })
+    });
+    });
 };
 
-getNumButtonOutput()
+const getOperatorBtnValue = () => {
+    operatorButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        screenResult.textContent = button.textContent; 
+    });
+    });
+};
+
+getNumButtonValue();
+getOperatorBtnValue();
