@@ -14,5 +14,38 @@ html {
 
 h1 {
     text-align: center;
-    margin-top: 300px;
+    margin-top: 100px;
+}
+
+#screen-result {
+    margin: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+#buttons-layout {
+    display: flex;
+    justify-content: center;
+}
+
+#number-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+
+#operator-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100px;
+}
+
+button {
+    margin: 2px;
+    width: 50px;
+    background-color: rgb(33, 71, 98);
+    color: antiquewhite;
+    font-size: 1.5em;
+    border-style: none;
 }
