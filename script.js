@@ -3,22 +3,45 @@
 const screenResult = document.querySelector("#screen-result")
 const numberButtons = document.querySelectorAll("#number-buttons button");
 const operatorButtons = document.querySelectorAll("#operator-buttons button");
+const allButtons = document.querySelectorAll("#buttons-layout div button")
 
-const getNumButtonValue = () => {
+const getFirstOperand = () => {
     numberButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        screenResult.textContent = button.textContent; 
-    });
+        button.addEventListener("click", () => {
+            firstOperand += button.textContent;
+        });
     });
 };
 
-const getOperatorBtnValue = () => {
+const getSecondOperand = () => {
+    numberButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            secondOperand += button.textContent;
+        });
+    });
+};
+
+const getOperator = () => {
     operatorButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        screenResult.textContent = button.textContent; 
-    });
+        button.addEventListener("click", () => {
+            operator = button.textContent;
+        });
     });
 };
 
-getNumButtonValue();
-getOperatorBtnValue();
+let firstOperand = "";
+let secondOperand = "";
+let operator = "";
+let result;
+
+const updateScreen = () => {
+    allButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            screenResult.textContent = `${firstOperand} ${operator} ${secondOperand}`;
+        });
+    });
+};
+
+getFirstOperand();
+getOperator();
+updateScreen();
