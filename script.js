@@ -34,12 +34,27 @@ const getOperator = () => {
 
 const operate = () => {
     equalButton.addEventListener("click", () => {
-        getSum()
+        if (operator == "+") add();
+        if (operator == "-") subtract();
+        if (operator == "x") multiply();
+        if (operator == "÷") divide();
     });
 };
 
-const getSum = () => {
+const add = () => {
     result = Number(firstValue) + Number(secondValue);
+};
+
+const subtract = () => {
+    result = Number(firstValue) - Number(secondValue);
+};
+
+const multiply = () => {
+    result = Number(firstValue) * Number(secondValue);
+};
+
+const divide = () => {
+    result = Number(firstValue) / Number(secondValue);
 };
 
 const updateScreen = () => {
