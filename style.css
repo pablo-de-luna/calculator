@@ -21,6 +21,7 @@ h1 {
     margin: 30px;
     font-size: 2em;
     text-align: center;
+    min-height: 50px;
 }
 
 #buttons-layout {
