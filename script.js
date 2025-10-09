@@ -1,10 +1,11 @@
 "use strict"
 
 const screen = document.querySelector("#screen")
-const numberButtons = document.querySelectorAll("#number-buttons button");
-const operatorButtons = document.querySelectorAll("#operator-buttons button");
+const numberButtons = document.querySelectorAll(".number-button");
+const operatorButtons = document.querySelectorAll(".operator-button");
 const equalButton = document.querySelector("#equal-button");
-const allButtons = document.querySelectorAll("#buttons-layout div button")
+const clearButton = document.querySelector("#clear-button");
+const allButtons = document.querySelectorAll("#buttons-layout button")
 
 let firstValue = "";
 let secondValue = ""; 
@@ -20,6 +21,7 @@ const getValues = () => {
             if (operator) {
                 secondValue += button.textContent;
             }
+            updateScreen();
         });
     });
 };
@@ -30,6 +32,7 @@ const getOperator = () => {
             operator = button.textContent;
 
             clearSecondValue();
+            updateScreen();
         });
     });
 };
@@ -54,7 +57,17 @@ const operate = () => {
         if (operator == "÷") divide();
 
         updateFirstValue();
+        screen.textContent = result;
     });
+};
+
+const clearScreen = () => {
+    clearButton.addEventListener("click", () => {
+        firstValue = "";
+        secondValue = "";
+        operator = "";
+        updateScreen();
+    })
 };
 
 const updateFirstValue = () => {firstValue = result};
@@ -62,17 +75,11 @@ const updateFirstValue = () => {firstValue = result};
 const clearSecondValue = () => {secondValue = ""};
 
 const updateScreen = () => {
-    allButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            screen.textContent = `${firstValue} ${operator} ${secondValue}`;
-        });
-    });
-    equalButton.addEventListener("click", () => {
-        screen.textContent = result;
-    });
+    screen.textContent = `${firstValue} ${operator} ${secondValue}`;
 };
 
 getValues();
 getOperator();
 operate();
 updateScreen();
+clearScreen();
