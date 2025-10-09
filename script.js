@@ -32,15 +32,6 @@ const getOperator = () => {
     });
 };
 
-const operate = () => {
-    equalButton.addEventListener("click", () => {
-        if (operator == "+") add();
-        if (operator == "-") subtract();
-        if (operator == "x") multiply();
-        if (operator == "÷") divide();
-    });
-};
-
 const add = () => {
     result = Number(firstValue) + Number(secondValue);
 };
@@ -55,6 +46,26 @@ const multiply = () => {
 
 const divide = () => {
     result = Number(firstValue) / Number(secondValue);
+};
+
+const operate = () => {
+    equalButton.addEventListener("click", () => {
+        if (operator == "+") add();
+        if (operator == "-") subtract();
+        if (operator == "x") multiply();
+        if (operator == "÷") divide();
+
+        updateFirstValue();
+        clearSecondValue();
+    });
+};
+
+const updateFirstValue = () => {
+    firstValue = result;
+};
+
+const clearSecondValue = () => {
+    secondValue = ""; 
 };
 
 const updateScreen = () => {
