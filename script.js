@@ -26,11 +26,11 @@ const getValues = () => {
     });
 };
 
-const getOperator = () => {
+const handleOperatorInput = () => {
     operatorButtons.forEach(button => {
         button.addEventListener("click", () => {
+            if (secondValue) operate();
             operator = button.textContent;
-
             clearSecondValue();
             updateScreen();
         });
@@ -48,7 +48,6 @@ const multiply = () => {result = firstValue * secondValue};
 const divide = () => {result = firstValue / secondValue};
 
 const operate = () => {
-    equalButton.addEventListener("click", () => {
         changeValuesToNumber();
 
         if (operator == "+") add();
@@ -58,7 +57,10 @@ const operate = () => {
 
         updateFirstValue();
         screen.textContent = result;
-    });
+};
+
+const handleEqualButton = () => {
+    equalButton.addEventListener("click", () => operate());
 };
 
 const clearScreen = () => {
@@ -79,7 +81,7 @@ const updateScreen = () => {
 };
 
 getValues();
-getOperator();
-operate();
+handleOperatorInput();
+handleEqualButton();
 updateScreen();
 clearScreen();
