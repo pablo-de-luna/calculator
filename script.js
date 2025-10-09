@@ -28,45 +28,38 @@ const getOperator = () => {
     operatorButtons.forEach(button => {
         button.addEventListener("click", () => {
             operator = button.textContent;
+
+            clearSecondValue();
         });
     });
 };
 
-const add = () => {
-    result = Number(firstValue) + Number(secondValue);
+const changeValuesToNumber = () => {
+    firstValue = Number(firstValue);
+    secondValue = Number(secondValue);
 };
 
-const subtract = () => {
-    result = Number(firstValue) - Number(secondValue);
-};
-
-const multiply = () => {
-    result = Number(firstValue) * Number(secondValue);
-};
-
-const divide = () => {
-    result = Number(firstValue) / Number(secondValue);
-};
+const add = () => {result = firstValue + secondValue};
+const subtract = () => {result = firstValue - secondValue};
+const multiply = () => {result = firstValue * secondValue};
+const divide = () => {result = firstValue / secondValue};
 
 const operate = () => {
     equalButton.addEventListener("click", () => {
+        changeValuesToNumber();
+
         if (operator == "+") add();
         if (operator == "-") subtract();
         if (operator == "x") multiply();
         if (operator == "÷") divide();
 
         updateFirstValue();
-        clearSecondValue();
     });
 };
 
-const updateFirstValue = () => {
-    firstValue = result;
-};
+const updateFirstValue = () => {firstValue = result};
 
-const clearSecondValue = () => {
-    secondValue = ""; 
-};
+const clearSecondValue = () => {secondValue = ""};
 
 const updateScreen = () => {
     allButtons.forEach(button => {
