@@ -17,6 +17,9 @@ const getValues = () => {
         button.addEventListener("click", () => {
             if (!operator) {
                 if (firstValue == "0" && button.textContent !== ".") firstValue = "";
+
+// FIX ERROR FIRSTVALUE.INCLUDES IS NOT A FUNCTION
+
                 if (firstValue.includes(".") && button.textContent === ".") return;
                 firstValue += button.textContent;
             }
@@ -36,7 +39,7 @@ const handleOperatorInput = () => {
             if (secondValue) operate();
             clearSecondValue();
             operator = button.textContent;
-            updateScreen();
+            updateScreen(); 
         });
     });
 }
@@ -46,21 +49,15 @@ const changeValuesToNumber = () => {
     secondValue = Number(secondValue);
 };
 
-const add = () => {
-    result = Math.round((firstValue + secondValue) * 10000) / 10000
+const roundNumber = (number) => {
+    return Math.round(number * 10000) / 10000;
 };
 
-const subtract = () => {
-    result = Math.round((firstValue - secondValue) * 10000) / 10000
-};
+const add = () => {result = roundNumber(firstValue + secondValue)};
+const subtract = () => {result = roundNumber(firstValue - secondValue)};
+const multiply = () => {result = roundNumber(firstValue * secondValue)};
+const divide = () => {result = roundNumber(firstValue / secondValue)};
 
-const multiply = () => {
-    result = Math.round((firstValue * secondValue) * 10000) / 10000
-};
-
-const divide = () => {
-    result = Math.round((firstValue / secondValue) * 10000) / 10000
-};
 
 const operate = () => {
         changeValuesToNumber();
@@ -73,6 +70,8 @@ const operate = () => {
         updateFirstValue();
         screen.textContent = firstValue;
 };
+
+// FIX OR MAKE FUNCTION TO KEEP OPERATING WHILE CLICKING EQUAL BUTTON
 
 const handleEqualButton = () => {
     equalButton.addEventListener("click", () => {
@@ -98,6 +97,9 @@ const clearSecondValue = () => {secondValue = ""};
 
 const updateScreen = () => {
     screen.textContent = `${firstValue} ${operator} ${secondValue}`;
+
+    console.clear();
+    console.log(`FV = ${firstValue}, OP = ${operator}, SV = ${secondValue}`)
 };
 
 getValues();
