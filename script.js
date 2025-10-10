@@ -17,9 +17,6 @@ const getValues = () => {
         button.addEventListener("click", () => {
             if (!operator) {
                 if (firstValue == "0" && button.textContent !== ".") firstValue = "";
-
-// FIX ERROR FIRSTVALUE.INCLUDES IS NOT A FUNCTION
-
                 if (firstValue.includes(".") && button.textContent === ".") return;
                 firstValue += button.textContent;
             }
@@ -53,11 +50,14 @@ const roundNumber = (number) => {
     return Math.round(number * 10000) / 10000;
 };
 
+const updateFirstValue = () => {firstValue = result.toString()};
+
+const clearSecondValue = () => {secondValue = ""};
+
 const add = () => {result = roundNumber(firstValue + secondValue)};
 const subtract = () => {result = roundNumber(firstValue - secondValue)};
-const multiply = () => {result = roundNumber(firstValue * secondValue)};
-const divide = () => {result = roundNumber(firstValue / secondValue)};
-
+const multiply = () => {result = roundNumber(firstValue + secondValue)};
+const divide = () => {result = roundNumber(firstValue + secondValue)};
 
 const operate = () => {
         changeValuesToNumber();
@@ -91,15 +91,13 @@ const clearScreen = () => {
     })
 };
 
-const updateFirstValue = () => {firstValue = result};
-
-const clearSecondValue = () => {secondValue = ""};
-
 const updateScreen = () => {
     screen.textContent = `${firstValue} ${operator} ${secondValue}`;
+    showInfoInConsole();
+};
 
-    console.clear();
-    console.log(`FV = ${firstValue}, OP = ${operator}, SV = ${secondValue}`)
+const showInfoInConsole = () => {
+    console.log(firstValue, operator, secondValue, result)
 };
 
 getValues();
