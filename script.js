@@ -7,7 +7,7 @@ const equalButton = document.querySelector("#equal-button");
 const clearButton = document.querySelector("#clear-button");
 const allButtons = document.querySelectorAll("#buttons-layout button")
 
-let firstValue = "";
+let firstValue = "0";
 let secondValue = ""; 
 let operator = "";
 let result;
@@ -16,9 +16,15 @@ const getValues = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
             if (!operator) {
+                if (firstValue == "0" && button.textContent !== ".") {
+                    firstValue = "";
+                }
                 firstValue += button.textContent;
             }
             if (operator) {
+                if (button.textContent === "." && secondValue === "") {
+                    secondValue = "0"
+                }
                 secondValue += button.textContent;
             }
             updateScreen();
@@ -30,12 +36,12 @@ const handleOperatorInput = () => {
     operatorButtons.forEach(button => {
         button.addEventListener("click", () => {
             if (secondValue) operate();
-            operator = button.textContent;
             clearSecondValue();
+            operator = button.textContent;
             updateScreen();
         });
     });
-};
+}
 
 const changeValuesToNumber = () => {
     firstValue = Number(firstValue);
@@ -50,22 +56,27 @@ const divide = () => {result = firstValue / secondValue};
 const operate = () => {
         changeValuesToNumber();
 
-        if (operator == "+") add();
-        if (operator == "-") subtract();
-        if (operator == "x") multiply();
-        if (operator == "÷") divide();
+        if (operator === "+") add();
+        if (operator === "-") subtract();
+        if (operator === "x") multiply();
+        if (operator === "÷") divide();
 
         updateFirstValue();
-        screen.textContent = result;
+        screen.textContent = firstValue;
 };
 
 const handleEqualButton = () => {
-    equalButton.addEventListener("click", () => operate());
+    equalButton.addEventListener("click", () => {
+        if (!secondValue) return;
+        operate();
+        clearSecondValue();
+        operator = "";
+    });
 };
 
 const clearScreen = () => {
     clearButton.addEventListener("click", () => {
-        firstValue = "";
+        firstValue = "0";
         secondValue = "";
         operator = "";
         updateScreen();
