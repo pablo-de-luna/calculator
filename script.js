@@ -16,15 +16,13 @@ const getValues = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
             if (!operator) {
-                if (firstValue == "0" && button.textContent !== ".") {
-                    firstValue = "";
-                }
+                if (firstValue == "0" && button.textContent !== ".") firstValue = "";
+                if (firstValue.includes(".") && button.textContent === ".") return;
                 firstValue += button.textContent;
             }
             if (operator) {
-                if (button.textContent === "." && secondValue === "") {
-                    secondValue = "0"
-                }
+                if (button.textContent === "." && secondValue === "") secondValue = "0";
+                if (secondValue.includes(".") && button.textContent === ".") return;
                 secondValue += button.textContent;
             }
             updateScreen();
@@ -48,10 +46,21 @@ const changeValuesToNumber = () => {
     secondValue = Number(secondValue);
 };
 
-const add = () => {result = firstValue + secondValue};
-const subtract = () => {result = firstValue - secondValue};
-const multiply = () => {result = firstValue * secondValue};
-const divide = () => {result = firstValue / secondValue};
+const add = () => {
+    result = Math.round((firstValue + secondValue) * 10000) / 10000
+};
+
+const subtract = () => {
+    result = Math.round((firstValue - secondValue) * 10000) / 10000
+};
+
+const multiply = () => {
+    result = Math.round((firstValue * secondValue) * 10000) / 10000
+};
+
+const divide = () => {
+    result = Math.round((firstValue / secondValue) * 10000) / 10000
+};
 
 const operate = () => {
         changeValuesToNumber();
