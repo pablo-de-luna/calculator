@@ -7,18 +7,24 @@
 }
 
 html {
-    font-family: DepartureMono Nerd Font, Arial, Helvetica, sans-serif;
-    background-color: #000000;
-    color: antiquewhite;
+    background-color: #c7c6c6;
 }
 
 #screen {
     margin: auto;
+    padding: 0 5px;
     margin-bottom: 10px;
     margin-top: 80px;
     max-width: 290px;
-    border: solid #2e2f31;
+    border: solid #1f1f1f;
+    border-radius: 3px;
+    background-color: #060606;
     font-size: 25px;
+    font-family: DepartureMono Nerd Font, Arial, Helvetica;
+    color: rgb(236, 247, 255);
+    text-shadow: 
+    0 0 4px #00a292,
+    0 0 4px #3db6cb;
     text-align: right;
     height: 34px;
     overflow: hidden;
@@ -37,23 +43,73 @@ html {
 }
 
 button {
+    z-index: 1;
     margin: 3px;
     width: 50px;
     height: 50px;
-    background-color: #2e2f31;
-    color: antiquewhite;
+    background-color: #ded8d4;
+    color: rgb(84, 95, 100);
     font-size: 1.5em;
     border-style: none;
-    border-radius: 3px;
-    
+    border-radius: 5px;
+    box-shadow:
+    0px 1px 1px #ded8d4,   /* soft border */
+    0px 3px 6px #ac9f9b,   /* button body first half */
+    0px 6px #69615e,       /* button body second half */
+    0px 7.5px black,       /* hole for button*/
+    6px 7px 10px #97867e;  /* stronger right shaddow */
+}
+
+button:active {
+    z-index: 0;
+    transform: translateY(3px);
+    box-shadow:
+        0px 1px 1px #ded8d4,   /* soft border */
+        0px 2px 3px #ac9f9b,   /* button body first half */
+        0px 3px #69615e,       /* button body second half */
+        0px 4px black,         /* hole for button*/
+        3px 3px 5px #97867e;   /* stronger right shaddow */
 }
 
 #equal-button {
     width: 106px;
+    background-color: #425d80;
+    color: antiquewhite;
+    box-shadow: 
+    0px 1px 1px #3b5678,   /* soft border */
+    0px 3px 6px #344965,   /* button body first half */
+    0px 6px #2b3d55,       /* button body second half */
+    0px 7.5px black,       /* hole for button*/
+    6px 7px 10px #63738f;  /* stronger right shaddow */
+}                          
+
+#clear-button {
+    background-color: #6f281a;
+    color: antiquewhite;
+    box-shadow: 
+    0px 1px 1px #601f1f,   /* soft border */
+    0px 3px 6px #531e13,   /* button body first half */
+    0px 6px #1d0a07,       /* button body second half */
+    0px 7.5px black,       /* hole for button*/
+    6px 7px 10px #8c5252;  /* stronger right shaddow */
 }
 
-button:hover {
-    background-color: #311e11;
+#equal-button:active {
+    box-shadow: 
+        0px 1px 1px #3b5678,
+        0px 2px 3px #344965,
+        0px 3px #2b3d55,
+        0px 4px black,
+        3px 3px 5px #63738f;
+}
+
+#clear-button:active {
+    box-shadow: 
+        0px 1px 1px #601f1f,
+        0px 2px 3px #531e13,
+        0px 3px #1d0a07,
+        0px 4px black,
+        3px 3px 5px #8c5252;
 }
 
 /* body * {
