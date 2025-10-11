@@ -15,14 +15,26 @@ let result;
 const getValues = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
+            if (screen.textContent === "ERROR") {
+                clearAllValues();
+                return;
+            }
             if (!operator) {
-                if (firstValue == "0" && button.textContent !== ".") firstValue = "";
-                if (firstValue.includes(".") && button.textContent === ".") return;
+                if (firstValue == "0" && button.textContent !== ".") {
+                    firstValue = "";
+                }
+                if (firstValue.includes(".") && button.textContent === ".") {
+                    return;
+                };
                 firstValue += button.textContent;
             }
             if (operator) {
-                if (button.textContent === "." && secondValue === "") secondValue = "0";
-                if (secondValue.includes(".") && button.textContent === ".") return;
+                if (button.textContent === "." && secondValue === "") {
+                    secondValue = "0";
+                }
+                if (secondValue.includes(".") && button.textContent === ".") {
+                    return;
+                };
                 secondValue += button.textContent;
             }
             updateScreen();
@@ -33,6 +45,10 @@ const getValues = () => {
 const handleOperatorInput = () => {
     operatorButtons.forEach(button => {
         button.addEventListener("click", () => {
+            if (screen.textContent === "ERROR") {
+                clearAllValues();
+                return;
+            }
             if (secondValue) operate();
             clearSecondValue();
             operator = button.textContent;
@@ -56,17 +72,19 @@ const clearSecondValue = () => {secondValue = ""};
 
 const add = () => {result = roundNumber(firstValue + secondValue)};
 const subtract = () => {result = roundNumber(firstValue - secondValue)};
-const multiply = () => {result = roundNumber(firstValue + secondValue)};
-const divide = () => {result = roundNumber(firstValue + secondValue)};
+const multiply = () => {result = roundNumber(firstValue * secondValue)};
+const divide = () => {result = roundNumber(firstValue / secondValue)};
 
 const operate = () => {
         changeValuesToNumber();
-
         if (operator === "+") add();
         if (operator === "-") subtract();
         if (operator === "x") multiply();
-        if (operator === "÷") divide();
-
+        if (operator === "÷" && secondValue !== 0) divide();
+        if (operator === "÷" && secondValue === 0) {
+            screen.textContent = "ERROR";       
+            return;
+        }
         updateFirstValue();
         screen.textContent = firstValue;
 };
@@ -82,13 +100,21 @@ const handleEqualButton = () => {
     });
 };
 
-const clearScreen = () => {
-    clearButton.addEventListener("click", () => {
+// SET A LIMIT TO THE VALUE INPUT TO PREVENT DISPLAY OVERFLOW IN SCREEN
+// ADD A BACKSPACE BUTTON AND FUNCTION TO IT
+// ADD +/- BUTTON AND FUNCTION TO IT
+
+const clearAllValues = () => {
         firstValue = "0";
         secondValue = "";
         operator = "";
         updateScreen();
-    })
+};
+
+const handleClearButton = () => {
+    clearButton.addEventListener("click", () => {
+        clearAllValues();
+    });
 };
 
 const updateScreen = () => {
@@ -103,5 +129,5 @@ const showInfoInConsole = () => {
 getValues();
 handleOperatorInput();
 handleEqualButton();
+handleClearButton();
 updateScreen();
-clearScreen();
