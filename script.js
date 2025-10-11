@@ -66,6 +66,14 @@ const roundNumber = (number) => {
     return Math.round(number * 10000) / 10000;
 };
 
+const convertToScientificNotation = () => {
+    let maxResultLength = 10;
+    let resultStr = result.toString();
+    if (resultStr.length > maxResultLength) {
+        result = result.toExponential(3);
+    }
+};
+
 const updateFirstValue = () => {firstValue = result.toString()};
 
 const clearSecondValue = () => {secondValue = ""};
@@ -85,11 +93,12 @@ const operate = () => {
             screen.textContent = "ERROR";       
             return;
         }
+        convertToScientificNotation();
         updateFirstValue();
         screen.textContent = firstValue;
 };
 
-// FIX OR MAKE FUNCTION TO KEEP OPERATING WHILE CLICKING EQUAL BUTTON
+// FIX OR MAKE A FUNCTION TO KEEP OPERATING WHILE CLICKING EQUAL BUTTON
 
 const handleEqualButton = () => {
     equalButton.addEventListener("click", () => {
@@ -101,8 +110,8 @@ const handleEqualButton = () => {
 };
 
 // SET A LIMIT TO THE VALUE INPUT TO PREVENT DISPLAY OVERFLOW IN SCREEN
-// ADD A BACKSPACE BUTTON AND FUNCTION TO IT
-// ADD +/- BUTTON AND FUNCTION TO IT
+// ADD A BACKSPACE BUTTON AND A FUNCTION TO IT
+// ADD +/- BUTTON AND A FUNCTION TO IT
 
 const clearAllValues = () => {
         firstValue = "0";
@@ -118,7 +127,7 @@ const handleClearButton = () => {
 };
 
 const updateScreen = () => {
-    screen.textContent = `${firstValue} ${operator} ${secondValue}`;
+    screen.textContent = `${firstValue}${operator}${secondValue}`;
     showInfoInConsole();
 };
 
