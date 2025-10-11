@@ -5,6 +5,7 @@ const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const equalButton = document.querySelector("#equal-button");
 const clearButton = document.querySelector("#clear-button");
+const backspaceButton = document.querySelector("#backspace");
 const allButtons = document.querySelectorAll("#buttons-layout button")
 
 let firstValue = "0";
@@ -107,7 +108,6 @@ const handleEqualButton = () => {
     });
 };
 
-// MAKE OPERATOR COLOR DIFFERENT OF VALUES
 // ADD A BACKSPACE BUTTON AND A FUNCTION TO IT
 // ADD +/- BUTTON AND A FUNCTION TO IT
 
@@ -124,6 +124,26 @@ const handleClearButton = () => {
     });
 };
 
+const handleBackspaceButton = () => {
+    backspaceButton.addEventListener("click", () => {
+        if (secondValue) {
+            secondValue = secondValue.substring(0, secondValue.length - 1);
+        } else if (operator) {
+            operator = "";
+        } else {
+            if (firstValue === "0") {
+                return;
+            }
+            firstValue = firstValue.substring(0, firstValue.length - 1);
+            if (firstValue === "") {
+                firstValue = "0";
+            }
+        }
+        updateScreen();
+
+    });
+}; 
+
 const updateScreen = () => {
     screen.textContent = `${firstValue}${operator}${secondValue}`;
     showInfoInConsole();
@@ -137,4 +157,5 @@ getValues();
 handleOperatorInput();
 handleEqualButton();
 handleClearButton();
+handleBackspaceButton();
 updateScreen();
