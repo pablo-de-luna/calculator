@@ -67,7 +67,7 @@ const roundNumber = (number) => {
 };
 
 const convertToScientificNotation = () => {
-    let maxResultLength = 10;
+    let maxResultLength = 12;
     let resultStr = result.toString();
     if (resultStr.length > maxResultLength) {
         result = result.toExponential(3);
@@ -98,8 +98,6 @@ const operate = () => {
         screen.textContent = firstValue;
 };
 
-// FIX OR MAKE A FUNCTION TO KEEP OPERATING WHILE CLICKING EQUAL BUTTON
-
 const handleEqualButton = () => {
     equalButton.addEventListener("click", () => {
         if (!secondValue) return;
@@ -109,7 +107,7 @@ const handleEqualButton = () => {
     });
 };
 
-// SET A LIMIT TO THE VALUE INPUT TO PREVENT DISPLAY OVERFLOW IN SCREEN
+// MAKE OPERATOR COLOR DIFFERENT OF VALUES
 // ADD A BACKSPACE BUTTON AND A FUNCTION TO IT
 // ADD +/- BUTTON AND A FUNCTION TO IT
 

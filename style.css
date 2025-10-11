@@ -16,19 +16,24 @@ html {
     margin: auto;
     margin-bottom: 10px;
     margin-top: 80px;
-    max-width: 218px;
-    font-size: 20px;
+    max-width: 290px;
+    border: solid #2e2f31;
+    font-size: 25px;
     text-align: right;
-    height: 30px;
+    height: 34px;
     overflow: hidden;
     word-break: break-all;
 }
 
 #buttons-layout {
-    max-width: 227px;
+    max-width: 298px;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
+}
+
+.separator {
+    width: 15px;
 }
 
 button {
@@ -39,13 +44,18 @@ button {
     color: antiquewhite;
     font-size: 1.5em;
     border-style: none;
+    border-radius: 3px;
     
+}
+
+#equal-button {
+    width: 106px;
 }
 
 button:hover {
     background-color: #311e11;
 }
 
-body * {
+/* body * {
     border: dotted grey;
-}
+} */
