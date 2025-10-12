@@ -6,21 +6,26 @@
     padding: 0;
 }
 
-html {
-    background-color: #c7c6c6;
+@font-face {
+    font-family: "DepartureMono";
+    src: url(./fonts/departureMono/DepartureMonoNerdFontMono-Regular.otf);
 }
 
-/* MAKE OPERATOR COLOR DIFFERENT OF VALUES */
+html {
+    background-color: #bbb5ac;
+}
 
 #screen-frame {
     height: 105px;
     width: 435px;
-    margin: 270px auto 15px;
+    margin: 150px auto 15px;
     display: flex;
     justify-content: center;
     background-color: #060606;
     border-radius: 6px;
 }
+
+/* CHANGE STYLE TO MAKE IT LOOK LIKE A RETRO CASSETE CALCULATOR */
 
 #screen {
     margin-top: 30px;
@@ -28,7 +33,7 @@ html {
     height: 51px;
     background-color: #060606;
     font-size: 38px;
-    font-family: DepartureMono Nerd Font, Arial, Helvetica;
+    font-family: DepartureMono, sans-serif;
     color: #ecf7ff;
     text-shadow: 
     0 0 6px #00a292,
@@ -49,8 +54,6 @@ html {
     width: 22.5px;
 }
 
-/* MAYBE MAKE THE BUTTON'S HEIGHT SHORTER??? */
-
 button {
     z-index: 1;
     margin: 4.5px;
@@ -59,6 +62,7 @@ button {
     background-color: #ded8d4;
     color: rgb(84, 95, 100);
     font-size: 2.25em;
+    font-family: Helvetica, "Trebuchet MS" sans-serif;
     border-style: none;
     border-radius: 7.5px;
     box-shadow:

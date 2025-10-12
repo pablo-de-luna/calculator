@@ -168,6 +168,8 @@ const handlePlusMinusButton = () => {
     });
 };
 
+// IF SECOND VALUE INCLUDES "-" WRAP SECOND VALUE IN ()
+
 const updateScreen = () => {
     screen.textContent = `${firstValue}${operator}${secondValue}`;
     // showInfoInConsole();
