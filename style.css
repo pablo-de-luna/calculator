@@ -19,137 +19,137 @@ body {
 
 #calc-frame {
     margin: auto;
-    margin-top: 100px;
+    margin-top: 4.8vh;
     background-color: #bbb5ac;
-    height: 550px;
-    width: 480px;
-    border-radius: 10px;
+    height: 440px;
+    width: 384px;
+    border-radius: 8px;
     box-shadow:
-    0px 4px 2px #bbb5ac,   /* soft border */
-    0px 20px 50px #97928b,   /* button body first half */
-    0px 40px #7e736f,       /* button body second half */
-    10px 30px 15px #97867e,  /* stronger right shaddow */
-    30px -10px 50px #937a6e,  /* stronger right shaddow */
-    -30px 30px 50px #fef8f1;  /* left side reflection */
+    0px 3.2px 1.6px #bbb5ac,   /* soft border */
+    0px 16px 40px #97928b,   /* button body first half */
+    0px 32px #7e736f,       /* button body second half */
+    8px 24px 12px #97867e,  /* stronger right shaddow */
+    24px -8px 40px #937a6e,  /* stronger right shaddow */
+    -24px 24px 40px #fef8f1;  /* left side reflection */
 }
 
 #message-text {
-    margin: 12px 40px;
-    padding: 6px;
+    margin: 9.6px 32px;
+    padding: 4.8px;
     font-family: "Electrolize", system-ui;
-    font-size: 1.2em;
+    font-size: 0.96em;
     font-weight: 400;
     color: #474747;
 }
 
 #screen-frame {
-    height: 125px;
-    width: 435px;
-    margin: 30px auto 0px;
+    height: 100px;
+    width: 348px;
+    margin: 24px auto 0px;
     display: flex;
     justify-content: center;
     background-color: #060606;
     border: solid #d6cfc5;
-    border-width: 3px;
+    border-width: 2.4px;
     border-style: inset;
-    border-radius: 8px;
+    border-radius: 6.4px;
 }
 
 #screen {
-    margin-top: 34px;
-    width: 380px;
-    height: 51px;
+    margin-top: 27.2px;
+    width: 304px;
+    height: 40.8px;
     background-color: #060606;
-    font-size: 38px;
+    font-size: 30.4px;
     font-family: DepartureMono, sans-serif;
     color: #ecf7ff;
     text-shadow: 
-    0 0 6px #00a292,
-    0 0 6px #3db6cb;
+    0 0 4.8px #00a292,
+    0 0 4.8px #3db6cb;
     text-align: right;
     overflow: hidden;
     word-break: break-all;
 }
 
 #buttons-layout {
-    max-width: 447px;
+    max-width: 357.6px;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
 }
 
 .separator {
-    width: 22.5px;
+    width: 18px;
 }
 
 button {
     z-index: 1;
-    margin: 4.5px;
-    width: 75px;
-    height: 60px;
+    margin: 3.6px;
+    width: 60px;
+    height: 48px;
     background-color: #282828;
     color: #e3d7c5;
-    font-size: 2.25em;
+    font-size: 1.8em;
     font-family: Helvetica, "Trebuchet MS", sans-serif;
     border-style: none;
-    border-radius: 7.5px;
+    border-radius: 6px;
     box-shadow:
-    0px 1px 1px #343a3c,   /* soft border */
-    0px 4.5px 9px #373737,   /* button body first half */
-    0px 9px #060606,       /* button body second half */
-    0px 11.25px black,       /* hole for button*/
-    9px 10.5px 15px #77624d;  /* stronger right shaddow */
+    0px 0.8px 0.8px #343a3c,   /* soft border */
+    0px 3.6px 7.2px #373737,   /* button body first half */
+    0px 7.2px #060606,       /* button body second half */
+    0px 9px black,       /* hole for button*/
+    7.2px 8.4px 12px #77624d;  /* stronger right shaddow */
 }
 
 button:active {
-    transform: translateY(4.5px);
+    transform: translateY(3.6px);
     box-shadow:
-        0px 1.5px 1.5px #343a3c,   /* soft border */
-        0px 3px 4.5px #373737,   /* button body first half */
-        0px 4.5px #060606,       /* button body second half */
-        0px 6px black,         /* hole for button*/
-        4.5px 4.5px 7.5px #77624d;   /* stronger right shaddow */
+        0px 1.2px 1.2px #343a3c,   /* soft border */
+        0px 2.4px 3.6px #373737,   /* button body first half */
+        0px 3.6px #060606,       /* button body second half */
+        0px 4.8px black,         /* hole for button*/
+        3.6px 3.6px 6px #77624d;   /* stronger right shaddow */
 }
 
 #equal-button {
-    width: 159px;
+    width: 127.2px;
     background-color: #425d80;
     color: #e3d7c5;
     box-shadow: 
-    0px 1.5px 1.5px #3b5678,   /* soft border */
-    0px 4.5px 9px #344965,   /* button body first half */
-    0px 9px #2b3d55,       /* button body second half */
-    0px 11.25px black,       /* hole for button*/
-    9px 10.5px 15px #63738f;  /* stronger right shaddow */
+    0px 1.2px 1.2px #3b5678,   /* soft border */
+    0px 3.6px 7.2px #344965,   /* button body first half */
+    0px 7.2px #2b3d55,       /* button body second half */
+    0px 9px black,       /* hole for button*/
+    7.2px 8.4px 12px #63738f;  /* stronger right shaddow */
 }                          
 
 #clear-button {
     background-color: #6f281a;
     color: #e3d7c5;
     box-shadow: 
-    0px 1.5px 1.5px #601f1f,   /* soft border */
-    0px 4.5px 9px #531e13,   /* button body first half */
-    0px 9px #1d0a07,       /* button body second half */
-    0px 11.25px black,       /* hole for button*/
-    9px 10.5px 15px #8c5252;  /* stronger right shaddow */
+    0px 1.2px 1.2px #601f1f,   /* soft border */
+    0px 3.6px 7.2px #531e13,   /* button body first half */
+    0px 7.2px #1d0a07,       /* button body second half */
+    0px 9px black,       /* hole for button*/
+    7.2px 8.4px 12px #8c5252;  /* stronger right shaddow */
 }
 
 #equal-button:active {
     box-shadow: 
-        0px 1.5px 1.5px #3b5678,  /* soft border */
-        0px 3px 4.5px #344965,  /* button body first half */
-        0px 4.5px #2b3d55,      /* button body second half */
-        0px 6px black,        /* hole for button*/
-        4.5px 4.5px 7.5px #63738f;  /* stronger right shaddow */
+        0px 1.2px 1.2px #3b5678,  /* soft border */
+        0px 2.4px 3.6px #344965,  /* button body first half */
+        0px 3.6px #2b3d55,      /* button body second half */
+        0px 4.8px black,        /* hole for button*/
+        3.6px 3.6px 6px #63738f;  /* stronger right shaddow */
 }
 
 #clear-button:active {
     box-shadow: 
-        0px 1.5px 1.5px #601f1f,  /* soft border */
-        0px 3px 4.5px #531e13,  /* button body first half */
-        0px 4.5px #1d0a07,      /* button body second half */
-        0px 6px black,        /* hole for button*/
-        4.5px 4.5px 7.5px #8c5252;  /* stronger right shaddow */
+        0px 1.2px 1.2px #601f1f,  /* soft border */
+        0px 2.4px 3.6px #531e13,  /* button body first half */
+        0px 3.6px #1d0a07,      /* button body second half */
+        0px 4.8px black,        /* hole for button*/
+        3.6px 3.6px 6px #8c5252;  /* stronger right shaddow */
 }
 
 /* body * {

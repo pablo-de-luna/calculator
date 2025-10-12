@@ -168,16 +168,22 @@ const handlePlusMinusButton = () => {
     });
 };
 
-// IF SECOND VALUE INCLUDES "-" WRAP SECOND VALUE IN ()
+const toggleSecondValueSign = () => {
+    if (secondValue.includes("-")) {
+        return `(${secondValue})`;
+    } else {
+        return secondValue;
+    }
+}
 
 const updateScreen = () => {
-    screen.textContent = `${firstValue}${operator}${secondValue}`;
-    // showInfoInConsole();
+    screen.textContent = `${firstValue}${operator}${toggleSecondValueSign()}`;
+    showInfoInConsole();
 };
 
-// const showInfoInConsole = () => {
-//     console.log(firstValue, operator, secondValue, result)
-// };
+const showInfoInConsole = () => {
+    console.log(firstValue, operator, secondValue, result)
+};
 
 getValues();
 handleOperatorInput();
