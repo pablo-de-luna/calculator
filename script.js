@@ -1,11 +1,14 @@
 "use strict"
 
+// THE LORD IS MY SHEPPARD, I LACK NOTHING
+
 const screen = document.querySelector("#screen")
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const equalButton = document.querySelector("#equal-button");
 const clearButton = document.querySelector("#clear-button");
 const backspaceButton = document.querySelector("#backspace");
+const plusMinusButton = document.querySelector("#plus-minus");
 const allButtons = document.querySelectorAll("#buttons-layout button")
 
 let firstValue = "0";
@@ -28,8 +31,7 @@ const getValues = () => {
                     return;
                 };
                 firstValue += button.textContent;
-            }
-            if (operator) {
+            } else {
                 if (button.textContent === "." && secondValue === "") {
                     secondValue = "0";
                 }
@@ -108,9 +110,6 @@ const handleEqualButton = () => {
     });
 };
 
-// ADD A BACKSPACE BUTTON AND A FUNCTION TO IT
-// ADD +/- BUTTON AND A FUNCTION TO IT
-
 const clearAllValues = () => {
         firstValue = "0";
         secondValue = "";
@@ -128,6 +127,9 @@ const handleBackspaceButton = () => {
     backspaceButton.addEventListener("click", () => {
         if (secondValue) {
             secondValue = secondValue.substring(0, secondValue.length - 1);
+            if (secondValue === "-") {
+                secondValue = "";
+            }
         } else if (operator) {
             operator = "";
         } else {
@@ -135,14 +137,30 @@ const handleBackspaceButton = () => {
                 return;
             }
             firstValue = firstValue.substring(0, firstValue.length - 1);
-            if (firstValue === "") {
+            if (firstValue === "" || firstValue === "-") {
                 firstValue = "0";
             }
         }
         updateScreen();
-
     });
-}; 
+};
+
+const handlePlusMinusButton = () => {
+    plusMinusButton.addEventListener("click", () => {
+        if (secondValue === "0") {
+            return;
+        } else if (secondValue) {
+            secondValue = Number(secondValue) * -1;
+            secondValue = String(secondValue);
+        } else if (firstValue && firstValue !== "0") {
+            firstValue = Number(firstValue) * -1;
+            firstValue = String(firstValue);
+        } else {
+            return;
+        }
+        updateScreen();
+    });
+};
 
 const updateScreen = () => {
     screen.textContent = `${firstValue}${operator}${secondValue}`;
@@ -158,4 +176,5 @@ handleOperatorInput();
 handleEqualButton();
 handleClearButton();
 handleBackspaceButton();
+handlePlusMinusButton();
 updateScreen();
