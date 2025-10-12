@@ -11,21 +11,43 @@
     src: url(./fonts/departureMono/DepartureMonoNerdFontMono-Regular.otf);
 }
 
-html {
+body {
+    background-color: #c9c5c2;
+    display: flex;
+    justify-content: center;
+}
+
+#calc-frame {
+    margin-top: 100px;
     background-color: #bbb5ac;
+    height: 500px;
+    width: 470px;
+    border-radius: 10px;
+    box-shadow:
+    0px 4px 2px #bbb5ac,   /* soft border */
+    0px 20px 50px #bbb5ac,   /* button body first half */
+    0px 40px #69615e,       /* button body second half */
+    10px 50px 15px #97867e,  /* stronger right shaddow */
+    30px -10px 50px #97867e,  /* stronger right shaddow */
+    -30px 30px 50px #ffffff;  /* stronger right shaddow */
+}
+
+#message-text {
+    margin: 20px 50px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    color: #404040;
 }
 
 #screen-frame {
     height: 105px;
     width: 435px;
-    margin: 150px auto 15px;
+    margin: 20px auto 15px;
     display: flex;
     justify-content: center;
     background-color: #060606;
     border-radius: 6px;
 }
-
-/* CHANGE STYLE TO MAKE IT LOOK LIKE A RETRO CASSETE CALCULATOR */
 
 #screen {
     margin-top: 30px;
@@ -59,35 +81,34 @@ button {
     margin: 4.5px;
     width: 75px;
     height: 60px;
-    background-color: #ded8d4;
-    color: rgb(84, 95, 100);
+    background-color: #282828;
+    color: #e3d7c5;
     font-size: 2.25em;
     font-family: Helvetica, "Trebuchet MS", sans-serif;
     border-style: none;
     border-radius: 7.5px;
     box-shadow:
-    0px 1.5px 1.5px #ded8d4,   /* soft border */
-    0px 4.5px 9px #ac9f9b,   /* button body first half */
-    0px 9px #69615e,       /* button body second half */
+    0px 1px 1px #343a3c,   /* soft border */
+    0px 4.5px 9px #373737,   /* button body first half */
+    0px 9px #060606,       /* button body second half */
     0px 11.25px black,       /* hole for button*/
-    9px 10.5px 15px #97867e;  /* stronger right shaddow */
+    9px 10.5px 15px #77624d;  /* stronger right shaddow */
 }
 
 button:active {
-    z-index: 0;
     transform: translateY(4.5px);
     box-shadow:
-        0px 1.5px 1.5px #ded8d4,   /* soft border */
-        0px 3px 4.5px #ac9f9b,   /* button body first half */
-        0px 4.5px #69615e,       /* button body second half */
+        0px 1.5px 1.5px #343a3c,   /* soft border */
+        0px 3px 4.5px #373737,   /* button body first half */
+        0px 4.5px #060606,       /* button body second half */
         0px 6px black,         /* hole for button*/
-        4.5px 4.5px 7.5px #97867e;   /* stronger right shaddow */
+        4.5px 4.5px 7.5px #77624d;   /* stronger right shaddow */
 }
 
 #equal-button {
     width: 159px;
     background-color: #425d80;
-    color: antiquewhite;
+    color: #e3d7c5;
     box-shadow: 
     0px 1.5px 1.5px #3b5678,   /* soft border */
     0px 4.5px 9px #344965,   /* button body first half */
@@ -98,7 +119,7 @@ button:active {
 
 #clear-button {
     background-color: #6f281a;
-    color: antiquewhite;
+    color: #e3d7c5;
     box-shadow: 
     0px 1.5px 1.5px #601f1f,   /* soft border */
     0px 4.5px 9px #531e13,   /* button body first half */
