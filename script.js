@@ -137,7 +137,9 @@ const handleBackspaceButton = () => {
                 return;
             }
             firstValue = firstValue.substring(0, firstValue.length - 1);
-            if (firstValue === "" || firstValue === "-") {
+            if (firstValue === "" ||
+                firstValue === "-" ||
+                firstValue.includes("e")) {
                 firstValue = "0";
             }
         }
@@ -164,12 +166,12 @@ const handlePlusMinusButton = () => {
 
 const updateScreen = () => {
     screen.textContent = `${firstValue}${operator}${secondValue}`;
-    showInfoInConsole();
+    // showInfoInConsole();
 };
 
-const showInfoInConsole = () => {
-    console.log(firstValue, operator, secondValue, result)
-};
+// const showInfoInConsole = () => {
+//     console.log(firstValue, operator, secondValue, result)
+// };
 
 getValues();
 handleOperatorInput();
