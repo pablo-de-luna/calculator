@@ -70,7 +70,7 @@ const roundNumber = (number) => {
 };
 
 const convertToScientificNotation = () => {
-    let maxResultLength = 12;
+    let maxResultLength = 11;
     let resultStr = result.toString();
     if (resultStr.length > maxResultLength) {
         result = result.toExponential(3);
@@ -149,6 +149,10 @@ const handleBackspaceButton = () => {
 
 const handlePlusMinusButton = () => {
     plusMinusButton.addEventListener("click", () => {
+        if (screen.textContent === "ERROR") {
+            clearAllValues();
+            return;
+        }
         if (secondValue === "0") {
             return;
         } else if (secondValue) {

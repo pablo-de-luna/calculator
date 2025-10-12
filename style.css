@@ -12,108 +12,113 @@ html {
 
 /* MAKE OPERATOR COLOR DIFFERENT OF VALUES */
 
-#screen {
-    margin: auto;
-    padding: 0 5px;
-    margin-bottom: 10px;
-    margin-top: 80px;
-    max-width: 290px;
-    border: solid #1f1f1f;
-    border-radius: 3px;
+#screen-frame {
+    height: 105px;
+    width: 435px;
+    margin: 270px auto 15px;
+    display: flex;
+    justify-content: center;
     background-color: #060606;
-    font-size: 25px;
+    border-radius: 6px;
+}
+
+#screen {
+    margin-top: 30px;
+    width: 405px;
+    height: 51px;
+    background-color: #060606;
+    font-size: 38px;
     font-family: DepartureMono Nerd Font, Arial, Helvetica;
     color: #ecf7ff;
     text-shadow: 
-    0 0 4px #00a292,
-    0 0 4px #3db6cb;
+    0 0 6px #00a292,
+    0 0 6px #3db6cb;
     text-align: right;
-    height: 34px;
     overflow: hidden;
     word-break: break-all;
 }
 
 #buttons-layout {
-    max-width: 298px;
+    max-width: 447px;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
 }
 
 .separator {
-    width: 15px;
+    width: 22.5px;
 }
 
 /* MAYBE MAKE THE BUTTON'S HEIGHT SHORTER??? */
 
 button {
     z-index: 1;
-    margin: 3px;
-    width: 50px;
-    height: 40px;
+    margin: 4.5px;
+    width: 75px;
+    height: 60px;
     background-color: #ded8d4;
     color: rgb(84, 95, 100);
-    font-size: 1.5em;
+    font-size: 2.25em;
     border-style: none;
-    border-radius: 5px;
+    border-radius: 7.5px;
     box-shadow:
-    0px 1px 1px #ded8d4,   /* soft border */
-    0px 3px 6px #ac9f9b,   /* button body first half */
-    0px 6px #69615e,       /* button body second half */
-    0px 7.5px black,       /* hole for button*/
-    6px 7px 10px #97867e;  /* stronger right shaddow */
+    0px 1.5px 1.5px #ded8d4,   /* soft border */
+    0px 4.5px 9px #ac9f9b,   /* button body first half */
+    0px 9px #69615e,       /* button body second half */
+    0px 11.25px black,       /* hole for button*/
+    9px 10.5px 15px #97867e;  /* stronger right shaddow */
 }
 
 button:active {
     z-index: 0;
-    transform: translateY(3px);
+    transform: translateY(4.5px);
     box-shadow:
-        0px 1px 1px #ded8d4,   /* soft border */
-        0px 2px 3px #ac9f9b,   /* button body first half */
-        0px 3px #69615e,       /* button body second half */
-        0px 4px black,         /* hole for button*/
-        3px 3px 5px #97867e;   /* stronger right shaddow */
+        0px 1.5px 1.5px #ded8d4,   /* soft border */
+        0px 3px 4.5px #ac9f9b,   /* button body first half */
+        0px 4.5px #69615e,       /* button body second half */
+        0px 6px black,         /* hole for button*/
+        4.5px 4.5px 7.5px #97867e;   /* stronger right shaddow */
 }
 
 #equal-button {
-    width: 106px;
+    width: 159px;
     background-color: #425d80;
     color: antiquewhite;
     box-shadow: 
-    0px 1px 1px #3b5678,   /* soft border */
-    0px 3px 6px #344965,   /* button body first half */
-    0px 6px #2b3d55,       /* button body second half */
-    0px 7.5px black,       /* hole for button*/
-    6px 7px 10px #63738f;  /* stronger right shaddow */
+    0px 1.5px 1.5px #3b5678,   /* soft border */
+    0px 4.5px 9px #344965,   /* button body first half */
+    0px 9px #2b3d55,       /* button body second half */
+    0px 11.25px black,       /* hole for button*/
+    9px 10.5px 15px #63738f;  /* stronger right shaddow */
 }                          
 
 #clear-button {
     background-color: #6f281a;
     color: antiquewhite;
     box-shadow: 
-    0px 1px 1px #601f1f,   /* soft border */
-    0px 3px 6px #531e13,   /* button body first half */
-    0px 6px #1d0a07,       /* button body second half */
-    0px 7.5px black,       /* hole for button*/
-    6px 7px 10px #8c5252;  /* stronger right shaddow */
+    0px 1.5px 1.5px #601f1f,   /* soft border */
+    0px 4.5px 9px #531e13,   /* button body first half */
+    0px 9px #1d0a07,       /* button body second half */
+    0px 11.25px black,       /* hole for button*/
+    9px 10.5px 15px #8c5252;  /* stronger right shaddow */
 }
 
 #equal-button:active {
     box-shadow: 
-        0px 1px 1px #3b5678,  /* soft border */
-        0px 2px 3px #344965,  /* button body first half */
-        0px 3px #2b3d55,      /* button body second half */
-        0px 4px black,        /* hole for button*/
-        3px 3px 5px #63738f;  /* stronger right shaddow */
+        0px 1.5px 1.5px #3b5678,  /* soft border */
+        0px 3px 4.5px #344965,  /* button body first half */
+        0px 4.5px #2b3d55,      /* button body second half */
+        0px 6px black,        /* hole for button*/
+        4.5px 4.5px 7.5px #63738f;  /* stronger right shaddow */
 }
 
 #clear-button:active {
     box-shadow: 
-        0px 1px 1px #601f1f,  /* soft border */
-        0px 2px 3px #531e13,  /* button body first half */
-        0px 3px #1d0a07,      /* button body second half */
-        0px 4px black,        /* hole for button*/
-        3px 3px 5px #8c5252;  /* stronger right shaddow */
+        0px 1.5px 1.5px #601f1f,  /* soft border */
+        0px 3px 4.5px #531e13,  /* button body first half */
+        0px 4.5px #1d0a07,      /* button body second half */
+        0px 6px black,        /* hole for button*/
+        4.5px 4.5px 7.5px #8c5252;  /* stronger right shaddow */
 }
 
 /* body * {
