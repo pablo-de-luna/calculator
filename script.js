@@ -1,6 +1,6 @@
 "use strict"
 
-// THE LORD IS MY SHEPPARD, I LACK NOTHING
+// THE LORD IS MY SHEPHERD, I LACK NOTHING
 
 const screen = document.querySelector("#screen")
 const numberButtons = document.querySelectorAll(".number-button");
@@ -181,12 +181,12 @@ const toggleSecondValueSign = () => {
 
 const updateScreen = () => {
     screen.textContent = `${firstValue}${operator}${toggleSecondValueSign()}`;
-    showInfoInConsole();
+    // showInfoInConsole();
 };
 
-const showInfoInConsole = () => {
-    console.log(firstValue, operator, secondValue, result)
-};
+// const showInfoInConsole = () => {
+//     console.log(firstValue, operator, secondValue, result)
+// };
 
 getValues();
 handleOperatorInput();
