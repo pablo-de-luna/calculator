@@ -15,6 +15,14 @@ body {
     background-color: #c6c3be;
 }
 
+#my-name {
+    margin: 20px auto;
+    padding-left: 10px;
+    width: 300px;
+    font-family: DepartureMono, sans-serif;
+    color: #526342;
+}
+
 /* #bg-graphic {
     margin: 300px auto -400px;
     height: 200px;
@@ -42,12 +50,12 @@ body {
 }
 
 #message-text {
-    margin: 9.6px 32px;
+    margin: 9.6px -5px 10px -4px;
     padding: 4.8px;
     font-family: "Electrolize", system-ui;
     font-size: 0.96em;
     font-weight: 400;
-    color: #474747;
+    color: #526342;
 }
 
 #screen-frame {
@@ -159,7 +167,7 @@ button:active {
         0px 4.8px black,        /* hole for button*/
         3.6px 3.6px 6px #8c5252;  /* stronger right shaddow */
 }
-
-/* body * {
+/* 
+body * {
     border: dotted grey;
 } */
