@@ -13,16 +13,24 @@
 
 body {
     background-color: #c6c3be;
-    display: flex;
-    justify-content: center;
 }
 
+/* #bg-graphic {
+    margin: 300px auto -400px;
+    height: 200px;
+    background-color: #afaca4;
+} */
+
 #calc-frame {
-    margin: auto;
-    margin-top: 4.8vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -190px;
+    padding-top: 33px;
     background-color: #bbb5ac;
-    height: 440px;
-    width: 384px;
+    height: 450px;
+    width: 380px;
     border-radius: 8px;
     box-shadow:
     0px 3.2px 1.6px #bbb5ac,   /* soft border */
@@ -44,8 +52,8 @@ body {
 
 #screen-frame {
     height: 100px;
-    width: 348px;
-    margin: 24px auto 0px;
+    width: 340px;
+    margin: auto;
     display: flex;
     justify-content: center;
     background-color: #060606;

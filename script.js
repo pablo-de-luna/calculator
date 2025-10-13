@@ -16,6 +16,8 @@ let secondValue = "";
 let operator = "";
 let result;
 
+// FIX WHEN TYPING A FIRST VALUE THAT ENDS IN DOT, AND THEN TYPE AN OPERATOR, THE DOT IS REMOVED
+
 const getValues = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
