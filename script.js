@@ -16,8 +16,6 @@ let secondValue = "";
 let operator = "";
 let result;
 
-// FIX WHEN TYPING A FIRST VALUE THAT ENDS IN DOT, AND THEN TYPE AN OPERATOR, THE DOT IS REMOVED
-
 const getValues = () => {
     numberButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -53,6 +51,9 @@ const handleOperatorInput = () => {
             if (screen.textContent === "ERROR") {
                 clearAllValues();
                 return;
+            }
+            if (firstValue.endsWith(".")) {
+                firstValue += "0";
             }
             if (secondValue) operate();
             clearSecondValue();
