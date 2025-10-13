@@ -17,23 +17,17 @@ body {
 
 #my-name {
     margin: 20px auto;
-    padding-left: 10px;
+    padding-left: 15px;
     width: 300px;
     font-family: DepartureMono, sans-serif;
     color: #526342;
 }
 
-/* #bg-graphic {
-    margin: 300px auto -400px;
-    height: 200px;
-    background-color: #afaca4;
-} */
-
 #calc-frame {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
-    margin-top: -225px;
+    margin-top: -200px;
     margin-left: -190px;
     padding-top: 33px;
     background-color: #bbb5ac;
@@ -49,13 +43,33 @@ body {
     -24px 24px 40px #fef8f1;  /* left side reflection */
 }
 
+#message-design {
+    display: flex;
+    margin: 10px 0;
+    height: 25px;
+}
+
 #message-text {
-    margin: 9.6px -5px 10px -4px;
-    padding: 4.8px;
+    margin: 0 12px;
+    width: 167px;
+    height: 20px;
     font-family: "Electrolize", system-ui;
     font-size: 0.96em;
     font-weight: 400;
     color: #526342;
+}
+
+#left-line, #right-line {
+    height: 20px;
+    background-color: #526342;
+}
+
+#left-line {
+    width: 55px;
+}
+
+#right-line {
+    width: 134px;
 }
 
 #screen-frame {
@@ -167,7 +181,9 @@ button:active {
         0px 4.8px black,        /* hole for button*/
         3.6px 3.6px 6px #8c5252;  /* stronger right shaddow */
 }
-/* 
-body * {
+
+
+/* body * {
     border: dotted grey;
+    border-width: 0.5px;
 } */
